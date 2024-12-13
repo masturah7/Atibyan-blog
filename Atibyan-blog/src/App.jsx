@@ -6,7 +6,7 @@ import SignUp from "./pages/Sign-Up"
 import SignIn from "./pages/Sign-In"
 import Projects from "./pages/Projects"
 import Header from "./components/Header"
-import Footer from "./components/Footer"
+import FooterComp from "./components/Footer"
 
 
 
@@ -22,7 +22,7 @@ export default function App() {
         <Route  path="/sign-in" element={<SignIn />} />
         <Route  path="/projects" element={<Projects />} />
       </Routes>
-      <Footer />
+      <FooterComp />
     </BrowserRouter>
   )
 }
