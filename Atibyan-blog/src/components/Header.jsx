@@ -1,8 +1,11 @@
 import { Button, Navbar, TextInput } from "flowbite-react";
 import {FaMoon} from "react-icons/fa"
 import{AiOutlineSearch} from "react-icons/ai"
-import{ Link} from "react-router-dom"
+import{ Link, useLocation} from "react-router-dom"
 export default function Header() {
+
+const path = useLocation().pathname
+
   return (
     <Navbar fluid rounded className="border-b-2">
       <Navbar.Brand href="https://flowbite-react.com" className="self-center whitespace-nowrap text-xl sm:text-xl font-semibold dark:text-white" >
@@ -28,11 +31,11 @@ export default function Header() {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="/" active>
+        <Navbar.Link href="/" active={path === "/"}>
           Home
         </Navbar.Link>
-        <Navbar.Link href="/about">About</Navbar.Link>
-        <Navbar.Link href="/projects">Projects</Navbar.Link>
+        <Navbar.Link href="/about" active={path === "/about"}>About</Navbar.Link>
+        <Navbar.Link href="/projects" active={path === "/projects"}>Projects</Navbar.Link>
         
       </Navbar.Collapse>
     </Navbar>
